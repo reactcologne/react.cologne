@@ -1,5 +1,4 @@
 import Image from 'next/future/image'
-import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import backgroundImage from '@/images/bg-open.jpg'

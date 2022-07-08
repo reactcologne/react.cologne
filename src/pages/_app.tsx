@@ -1,6 +1,6 @@
+import { AppProps } from 'next/app'
 import 'focus-visible'
 import '@/styles/tailwind.css'
-import { AppProps } from 'next/app'
 
 export default function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />

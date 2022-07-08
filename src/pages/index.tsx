@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import { InferGetStaticPropsType } from 'next'
 
-import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { NextEventHero } from '@/components/NextEventHero'
-import { JoinSlack } from '@/components/JoinSlack'
 import { Schedule } from '@/components/Schedule'
-import { NextEvent, scrapeNextMeetupEvent } from '@/lib/meetup'
+import { JoinSlack } from '@/components/JoinSlack'
 import { Host } from '@/components/Host'
+import { Footer } from '@/components/Footer'
+import { NextEvent, scrapeNextMeetupEvent } from '@/lib/meetup'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 

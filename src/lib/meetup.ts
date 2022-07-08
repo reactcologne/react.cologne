@@ -22,7 +22,7 @@ export async function scrapeNextMeetupEvent() {
   const res = await fetch('https://meetup.com/react-cologne/', {
     headers: {
       'user-agent':
-        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36', // yes yes it's me chrome on mac os
+        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36', // yes yes it's me chrome on macOS
     },
   })
   const html = await res.text()
@@ -54,8 +54,6 @@ export async function scrapeNextMeetupEvent() {
 
   const venue = data[eventData.venue.id]
   const image = data[eventData.images[0].id]
-
-  console.log(image.baseUrl.concat(image.id).concat('800x450.jpg'))
 
   const event: NextEvent = {
     title: eventData.title,

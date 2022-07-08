@@ -1,10 +1,10 @@
 import Image from 'next/future/image'
+import * as React from 'react'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import backgroundImage from '@/images/bg-close.jpg'
 import { NextEvent } from '@/lib/meetup'
-import React from 'react'
 
 type Props = {
   nextEvent: NextEvent
@@ -30,7 +30,6 @@ export function NextEventHero({ nextEvent }: Props) {
         <div className="mx-auto max-w-2xl lg:max-w-4xl lg:px-12">
           <h1 className="font-display text-5xl font-bold tracking-tighter text-blue-600 sm:text-7xl">
             <a href={nextEvent.link} rel="noopener noreferrer">
-              <span className="sr-only">React.Cologne - </span>
               {nextEvent.title}
             </a>
           </h1>
