@@ -73,7 +73,7 @@ export async function scrapeNextMeetupEvent() {
       hour: 'numeric',
       minute: '2-digit',
     }),
-    description: mdConverter.makeHtml(eventData.description),
+    description: mdConverter.makeHtml(eventData.description.split('---')[0]),
     image: image
       ? image.baseUrl.concat(image.id).concat('/800x450.jpg')
       : undefined,
