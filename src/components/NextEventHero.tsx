@@ -47,7 +47,10 @@ export function NextEventHero({ nextEvent }: Props) {
             <Detail title="Time">{nextEvent.startTimeText}</Detail>
             <Detail title="Host">{nextEvent.venue.name}</Detail>
             <Detail title="Address">
-              <a href="" rel="noreferrer noopener">
+              <a
+                href={`https://maps.google.com/?q=${nextEvent.venue.geoLat},${nextEvent.venue.geoLong}`}
+                rel="noreferrer noopener"
+              >
                 {nextEvent.venue.address}
               </a>
             </Detail>
