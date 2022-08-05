@@ -58,21 +58,24 @@ export async function scrapeNextMeetupEvent() {
   const event: NextEvent = {
     title: eventData.title,
     startDate: eventData.dateTime,
-    startDateFullText: new Date(eventData.dateTime).toLocaleString('en-US', {
+    startDateFullText: new Intl.DateTimeFormat('en-US', {
       month: 'short',
       day: 'numeric',
       year: 'numeric',
       hour: 'numeric',
       minute: '2-digit',
-    }),
-    startDateText: new Date(eventData.dateTime).toLocaleString('en-US', {
+      timeZone: 'Europe/Berlin',
+    }).format(new Date(eventData.dateTime)),
+    startDateText: new Intl.DateTimeFormat('en-US', {
       month: 'short',
       day: 'numeric',
-    }),
-    startTimeText: new Date(eventData.dateTime).toLocaleString('en-US', {
+      timeZone: 'Europe/Berlin',
+    }).format(new Date(eventData.dateTime)),
+    startTimeText: new Intl.DateTimeFormat('en-US', {
       hour: 'numeric',
       minute: '2-digit',
-    }),
+      timeZone: 'Europe/Berlin',
+    }).format(new Date(eventData.dateTime)),
     description: mdConverter.makeHtml(
       eventData.description.split('\\-\\-\\-')[0]
     ),
